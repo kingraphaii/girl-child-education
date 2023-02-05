@@ -45,13 +45,13 @@
     style="background-image: url('/amevi-wisdom.jpg')"
   >
     <div
-      class="mx-auto shadow-2xl left-0 p-5 top-0 lg:p-10 bg-pink-500 selection:bg-black absolute text-black w-4/5 lg:w-1/3 rounded-br-3xl after:absolute after:content-[''] sm:after:bottom-0 after:w-2/5 after:border-b-8 after:left-0 after:border-white"
+      class="mx-auto left-0 p-5 top-0 lg:p-6 bg-pink-500 selection:bg-black absolute text-black w-4/5 lg:w-1/3 rounded-br-3xl after:absolute after:content-[''] sm:after:bottom-0 after:w-2/5 after:border-b-8 after:left-0 after:border-white"
     >
       <h3
         class="text-3xl lg:text-5xl font-light lg:font-thin text-slate-200 relative mb-8"
       >
         Every girl child deserves
-        <span ref="typedHero" class="font-bold"></span>
+        <span ref="typedHero" class="font-black"></span>
       </h3>
       <p class="text-lg mt-5 text-slate-200 mb-8 font-thin relative">
         With your support, we can provide education to girls who may not have
@@ -70,7 +70,7 @@
         Objective.
       </h3>
       <p class="text-lg mt-5 text-slate-200 mb-8 font-thin relative">
-        A girl child to depend on education for economic freedom:To take and
+        For girl child to depend on education for economic freedom, to take and
         keep a girl in school with tools that will eliminate barriers that will
         hinder with their education.
       </p>
@@ -114,7 +114,7 @@
   </div>
 
   <div
-    class="px-6 lg:px-0 lg:mx-16 flex gap-10 justify-center mb-5 items-center h-80 relative bg-gradient-to-b from-[#f79cb089]"
+    class="px-6 lg:px-0 lg:mx-16 flex gap-10 justify-center mb-10 items-center h-80 relative bg-gradient-to-b from-[#f79cb089]"
   >
     <div class="text-3xl font-thin px-6 w-3/5 text-right">
       &#10075;&#10075;Girl child education is a crucial aspect in the
@@ -141,6 +141,53 @@
       >
     </div>
   </div>
+
+  <div
+    class="min-h-96 py-10 px-20 lg:mx-16 bg-black flex items-center mb-2 text-white"
+  >
+    <div class="w-3/5">
+      <h2 class="font-black text-3xl mb-3" ref="supportUs">&nbsp;</h2>
+      <p
+        class="text-slate-300 mb-8 text-sm font-light border-l-2 border-l-pink-600 px-3"
+      >
+        As a non-profit organization, we rely on the support of donors like you
+        to continue our mission of promoting girl child education. Whether you
+        choose to donate, volunteer your time, or spread awareness about the
+        importance of girl child education, every action counts. Join us in our
+        mission to empower girls through education. Your donation or
+        contributution can make a real difference in the lives of girls who
+        otherwise would not have access to education.
+      </p>
+
+      <span class="font-black">With every contributution, you help to:</span>
+      <ul class="list-disc pl-10 text-sm mt-3 text-slate-300">
+        <li>Advocate for equal access to education</li>
+        <li>
+          Empower girls and their families with the knowledge and skills needed
+          to make informed decisions about their education
+        </li>
+      </ul>
+      <div class="flex gap-3 mt-6">
+        <a
+          href="."
+          class="bg-white py-3 px-6 rounded-full text-black font-black hover:bg-slate-200"
+        >
+          Contribute
+        </a>
+        <div class="flex flex-col">
+          <div class="text-sm mb-1 text-slate-300">Or give us a call on</div>
+          <div class="text-yellow-700 font-bold">+(27) 81 738 1868</div>
+        </div>
+      </div>
+    </div>
+    <div class="w-2/5 flex flex-col justify-center items-center gap-6">
+      <h3 class="font-black text-4xl text-yellow-400">Text Books</h3>
+      <h3 class="font-black text-3xl text-pink-400">Sanitary Towels</h3>
+      <h3 class="font-black text-4xl text-green-600">Food Packs</h3>
+      <a href="." class="text-sm text-slate-300">and more..</a>
+    </div>
+  </div>
+
   <Footer></Footer>
 </template>
 
@@ -153,10 +200,12 @@ export default {
       strings: [
         "to participate in economic development.",
         "learning opportunities.",
+        "an equal opportunity to receive quality education.",
       ],
-      typeSpeed: 90,
+      typeSpeed: 40,
       loopCount: 3,
       loopDelay: 10000,
+      loop: true,
     };
     const options2 = {
       strings: ["never dim your light.", "become your dream."],
@@ -166,6 +215,13 @@ export default {
 
     this.typed = new Typed(this.$refs.typedHero, options);
     this.typed2 = new Typed(this.$refs.becomeYourDream, options2);
+    this.typed3 = new Typed(this.$refs.supportUs, {
+      strings: ["Support Us.", "Help make a difference."],
+      typeSpeed: 80,
+      showCursor: false,
+      loopCount: Infinity,
+      loop: false,
+    });
   },
 };
 </script>
