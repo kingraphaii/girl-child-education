@@ -39,6 +39,59 @@
       >
     </div>
   </nav>
+  <Dialog as="div" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+    <DialogPanel
+      focus="true"
+      class="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden"
+    >
+      <div class="flex h-9 items-center justify-between">
+        <div class="flex">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Autopros</span>
+            <span class="text-4xl font-extralight"
+              ><span class="">auto</span
+              ><span class="text-orange-500">pros</span>
+            </span>
+          </a>
+        </div>
+        <div class="flex">
+          <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            @click="mobileMenuOpen = false"
+          >
+            <span class="sr-only">Close menu</span>
+            <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+      </div>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10">
+          <div class="space-y-2 py-6">
+            <a
+              v-for="item in navigation"
+              :key="item.name"
+              :href="item.href"
+              class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
+              >{{ item.name }}</a
+            >
+          </div>
+          <div class="py-6">
+            <a
+              href="/sign-in"
+              class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
+              >Sign In</a
+            >
+            <a
+              href="/sign-up"
+              class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
+              >Sign Up</a
+            >
+          </div>
+        </div>
+      </div>
+    </DialogPanel>
+  </Dialog>
   <!-- after:absolute after:left-0 after:w-1/2 after:content-[''] after:text-xs after:bottom-0 after:border-b after:border-white -->
   <section
     class="bg-cover px-6 lg:px-0 lg:mx-16 lg:bg-left-top h-[82vh] relative bg-center"
@@ -213,6 +266,52 @@
     </div>
   </section>
 
+  <section class="min-h-[24-rem] py-10 px-20 lg:mx-16">
+    <p class="text-3xl font-thin text-center">
+      My objective is to plant a seed within the mind of a girl child to rely on
+      the power of education to gain economic freedom and financial stability.
+    </p>
+    <div class="flex justify-center my-10">
+      <h3 class="text-5xl font-thin">and I believe &hellip;</h3>
+    </div>
+    <div class="flex flex-col w-full gap-5">
+      <div class="flex w-full">
+        <div
+          class="w-1/2 min-h-[4rem] bg-pink-500 flex justify-center items-center px-4 py-2"
+        >
+          <p class="font-black text-lg text-center text-slate-200">
+            That if you take a girl child to school, you educate a nation to
+            school.
+          </p>
+        </div>
+        <div class="w-1/2 h-16">&nbsp;</div>
+      </div>
+
+      <div class="flex w-full">
+        <div class="w-1/2 h-16">&nbsp;</div>
+        <div
+          class="w-1/2 h-16 bg-green-800 flex justify-center items-center px-4 py-2"
+        >
+          <p class="font-black text-lg text-slate-200">
+            That education is a key to economic freedom & independence.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex w-full">
+        <div
+          class="w-1/2 min-h-[4rem] bg-black flex justify-center items-center px-4 py-2"
+        >
+          <p class="font-black text-lg text-center text-slate-200">
+            That education is beyond the classroom. It is the power of having
+            knowledge about your surrounding and empowering people around you.
+          </p>
+        </div>
+        <div class="w-1/2 h-16">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
   <div id="contribute" class="min-h-[24rem] bg-black mb-2 text-white">
     <div class="py-10 px-20 lg:mx-16 flex flex-col lg:flex-row items-center">
       <div class="w-full lg:w-3/5">
@@ -273,6 +372,14 @@
 
 <script>
 import Typed from "typed.js";
+import { ref } from "vue";
+
+import { Dialog, DialogPanel } from "@headlessui/vue";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/vue/24/outline";
 
 export default {
   mounted() {
@@ -283,7 +390,7 @@ export default {
         "an equal opportunity to receive quality education.",
       ],
       typeSpeed: 40,
-      loopCount: 3,
+      loopCount: Infinity,
       loopDelay: 10000,
       loop: true,
     };
@@ -291,13 +398,26 @@ export default {
       strings: ["never dim your light.", "become your dream."],
       typeSpeed: 40,
       showCursor: false,
-      loopCount: 3,
+      loopCount: Infinity,
       loopDelay: 10000,
       loop: true,
     };
-
+    const mobileMenuOpen = false;
     this.typed = new Typed(this.$refs.typedHero, options);
     this.typed2 = new Typed(this.$refs.becomeYourDream, options2);
   },
 };
+</script>
+
+<script setup>
+import { ref } from "vue";
+
+import { Dialog, DialogPanel } from "@headlessui/vue";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  ArrowTopRightOnSquareIcon,
+} from "@heroicons/vue/24/outline";
+
+const mobileMenuOpen = ref(false);
 </script>
