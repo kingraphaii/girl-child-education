@@ -205,7 +205,7 @@
     <img
       src="/sdg-banner.png"
       class="w-full lg:w-96 border-4 border-[#478bca]"
-      alt=""
+      alt="Sustainable Goals Development"
     />
     <div class="self-center text-center font-black text-2xl text-[#478bca]">
       Our focus is on one of the United Nations' sustainable goals of equal and
@@ -275,34 +275,34 @@
       <h3 class="text-5xl font-thin">and I believe &hellip;</h3>
     </div>
     <div class="flex flex-col w-full gap-5">
-      <div class="flex w-full">
+      <div class="flex lg:flex-row flex-col w-full">
         <div
-          class="w-1/2 min-h-[4rem] bg-pink-500 flex justify-center items-center px-4 py-2"
+          class="lg:w-1/2 min-h-[4rem] bg-pink-500 flex justify-center items-center px-4 py-5"
         >
-          <p class="font-black text-lg text-center text-slate-200">
+          <p class="lg:font-black lg:text-lg text-center text-slate-200">
             That if you take a girl child to school, you educate a nation to
             school.
           </p>
         </div>
-        <div class="w-1/2 h-16">&nbsp;</div>
+        <div class="lg:w-1/2 hidden lg:block">&nbsp;</div>
       </div>
 
-      <div class="flex w-full">
+      <div class="flex flex-col lg:flex-row w-full">
         <div class="w-1/2 h-16">&nbsp;</div>
         <div
-          class="w-1/2 h-16 bg-green-800 flex justify-center items-center px-4 py-2"
+          class="lg:w-1/2 h-16 bg-green-800 flex justify-center items-center px-4 py-5"
         >
-          <p class="font-black text-lg text-slate-200">
+          <p class="text-center lg:font-black lg:text-lg text-slate-200">
             That education is a key to economic freedom & independence.
           </p>
         </div>
       </div>
 
-      <div class="flex w-full">
+      <div class="flex flex-col lg:flex-row w-full">
         <div
-          class="w-1/2 min-h-[4rem] bg-black flex justify-center items-center px-4 py-2"
+          class="lg:w-1/2 min-h-[4rem] bg-black flex justify-center items-center px-4 py-5"
         >
-          <p class="font-black text-lg text-center text-slate-200">
+          <p class="lg:font-black lg:text-lg text-center text-slate-200">
             That education is beyond the classroom. It is the power of having
             knowledge about your surrounding and empowering people around you.
           </p>
